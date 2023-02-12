@@ -12,41 +12,91 @@ A simple file management web application that allows users to upload and downloa
 
 - Node.js
 - npm
+- Java
+- Maven
+- PostgreSQL
+
 
 ## Getting Started
 
 1. Clone the repository
 git clone https://github.com/jurerajcic/JFileApp.git
 
-
 2. Install the dependencies
 npm install
-
-
 
 3. Start the development server
 npm start
 
+4. Clone the backend repository
+git clone https://github.com/jurerajcic/JFileAppBackend.git
 
+5. Install the dependencies for the backend
+mvn install
 
-4. Open the app in your browser at `http://localhost:3000`
+6. Start the backend server
+mvn spring-boot:run
+
 
 ## File Structure
-JFileApp/
-├── public/
-│ ├── index.html
-│ └── resources/
-│ ├── download.png
-│ └── upload.png
-├── src/
-│ ├── App.js
-│ ├── components/
-│ │ ├── DownloadComponent.js
-│ │ ├── FooterComponent.js
-│ │ └── UploadComponent.js
-│ └── services/
-│ └── JFileService.js
-└── package.json
+```
+FRONTEND
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+└── src
+    ├── App.css
+    ├── App.js
+    ├── components
+    │   ├── DownloadComponent.jsx
+    │   ├── FooterComponent.jsx
+    │   ├── HeaderComponent.js
+    │   ├── UploadComponent.jsx
+    │   └── resources
+    │       ├── download.png
+    │       └── upload.png
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── serviceWorker.js
+    └── services
+        └── JFileService.js
+```
+
+```
+BACKEND
+├── docker
+│   └── maven
+│       └── Dockerfile
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    └── main
+        ├── java
+        │   └── hr
+        │       └── app
+        │           └── v1
+        │               ├── Main.java
+        │               ├── additions
+        │               │   ├── LocalDateTimeAttributeConverter.java
+        │               │   └── RequestDeniedException.java
+        │               ├── controller
+        │               │   └── JFileController.java
+        │               ├── model
+        │               │   └── JFileEntity.java
+        │               ├── repository
+        │               │   └── JFileRepository.java
+        │               └── services
+        │                   ├── classes
+        │                   │   └── JFileServiceImpl.java
+        │                   └── interfaces
+        │                       └── JFileService.java
+        └── resources
+            └── application.properties
+```
 
 
 ## Technology Stack
@@ -54,6 +104,8 @@ JFileApp/
 - React.js
 - axios
 - file-saver
+- Spring Boot
+- PostgreSQL
 
 ## Contributing
 
